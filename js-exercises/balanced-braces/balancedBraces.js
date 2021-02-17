@@ -12,7 +12,7 @@ function balancedBraces(str) {
       bracketStack.pop();
     }
   }
-  return bracketStack.length === 0;
+  return !bracketStack.length;
 }
 
 export { balancedBraces };
