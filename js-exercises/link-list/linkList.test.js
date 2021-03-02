@@ -37,38 +37,38 @@ describe('LinkList', () => {
   beforeEach(() => {
     list = new LinkList();
   });
-  // test('should prepend value', () => {
-  //   list.prepend('Satyam');
-  //   list.prepend('sidhartha');
+  test('should prepend value', () => {
+    list.prepend('Satyam');
+    list.prepend('sidhartha');
 
-  //   expect(list.length()).toBe(2);
-  //   expect(list.head).not.toBeNull();
-  //   expect(list.head.value).toBe('sidhartha');
-  // });
+    expect(list.length()).toBe(2);
+    expect(list.head).not.toBeNull();
+    expect(list.head.value).toBe('sidhartha');
+  });
 
-  // test('should append value', () => {
-  //   list.append('Satyam');
-  //   list.append('sidhartha');
-  //   list.append('Rahul');
-  //   expect(list.length()).toBe(3);
-  //   expect(list.head).not.toBeNull();
-  //   expect(list.head.value).toBe('Satyam');
-  // });
+  test('should append value', () => {
+    list.append('Satyam');
+    list.append('sidhartha');
+    list.append('Rahul');
+    expect(list.length()).toBe(3);
+    expect(list.head).not.toBeNull();
+    expect(list.head.value).toBe('Satyam');
+  });
 
-  // test('should delete value', () => {
-  //   list.append('Satyam');
-  //   list.append('sidhartha');
-  //   list.delete('sidhartha');
-  //   expect(list.length()).toBe(1);
-  //   expect(list.contains('sidhartha')).toBeFalsy();
-  // });
+  test('should delete value', () => {
+    list.append('Satyam');
+    list.append('sidhartha');
+    list.delete('sidhartha');
+    expect(list.length()).toBe(1);
+    expect(list.contains('sidhartha')).toBeFalsy();
+  });
 
-  // test('should traverse values', () => {
-  //   list.append('Satyam');
-  //   list.append('sidhartha');
-  //   list.traverse();
-  //   expect(list.length()).toBe(2);
-  // });
+  test('should traverse values', () => {
+    list.append('Satyam');
+    list.append('sidhartha');
+    list.traverse();
+    expect(list.length()).toBe(2);
+  });
   test('should contain value', () => {
     list.append('Satyam');
     list.append('sidhartha');

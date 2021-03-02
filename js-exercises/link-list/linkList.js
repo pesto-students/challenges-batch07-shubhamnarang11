@@ -14,7 +14,7 @@ export default class LinkList {
     const newNode = new LinkListNode(value);
 
     if (this.head) {
-      let appendPosition = this.traverse();
+      const appendPosition = this.traverse();
 
       appendPosition.next = newNode;
     } else {
@@ -23,13 +23,31 @@ export default class LinkList {
   }
 
   delete(value) {
-    // code here
+    let head = this.head.next;
+    let prevNode = this.head;
+
+    if (prevNode.value === value) {
+      this.head = head;
+    } else {
+      while (head) {
+        if (head.value === value) {
+          prevNode.next = head.next;
+          return;
+        }
+
+        prevNode = head;
+        head = head.next;
+      }
+    }
   }
 
-  traverse() {
-    let head = this.head;
+  traverse(value = null) {
+    let { head } = this;
 
-    while (head.next !== null) {
+    while (head.next) {
+      if (value && head.value === value) {
+        return head;
+      }
       head = head.next;
     }
 
@@ -37,21 +55,14 @@ export default class LinkList {
   }
 
   contains(value) {
-    let head = this.head;
-    while (head) {
-      if (head.value === value) {
-        return true;
-      }
-      head = head.next;
-    }
-    return false;
+    return this.traverse(value).value === value;
   }
 
   length() {
-    let head = this.head;
+    let { head } = this;
     let linkedListLength = 0;
 
-    while (head !== null) {
+    while (head) {
       linkedListLength += 1;
       head = head.next;
     }
