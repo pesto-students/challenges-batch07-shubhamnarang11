@@ -16,15 +16,10 @@ function rangeIter(lb, ub) {
   if (lb === ub) {
     return [lb];
   }
-  const iterator = function () {
-    return {
-      next() {
-        if (lb <= ub) {
-          return { value: lb++, done: false };
-        }
-        return { value: lb, done: true };
-      },
-    };
+  const iterator = function* () {
+    for(let i = lb;i <= ub ;i++){
+      yield i
+    }
   };
 
   return {
